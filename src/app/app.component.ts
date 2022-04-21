@@ -83,7 +83,8 @@ export class AppComponent implements OnInit {
     }
   }
   async sortBook($event: Sort) {
-    this.dataSource.data = await this.bookService.sorted($event);
+    this.bookService.sorted($event);
+    this.dataSource.data = await this.bookService.getBooks();
     console.log(this.dataSource.data);
     this.snackBar.open(
       'Successfully sorted', 'Dismiss', {

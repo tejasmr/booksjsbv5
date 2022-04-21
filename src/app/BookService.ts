@@ -36,8 +36,7 @@ export class BookService {
         return await lastValueFrom(this.http.post<boolean>(this.url + "/updateBook", book));
     }
 
-    async sorted(sort: Sort): Promise<Book[]> {
+    sorted(sort: Sort) {
         this.sort = sort;
-        return this.getBooks();
     }
 }
