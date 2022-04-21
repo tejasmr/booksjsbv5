@@ -21,6 +21,7 @@ export class BookService {
     }
     
     async getBooks(): Promise<Book[]> {
+        console.log(this.url + "/" + "?sortBy=" + this.sort.active + "&?order=" + (this.sort.direction === "asc" ? "ASC" : "DESC"));
         return await lastValueFrom(this.http.get<Book[]>(this.url + "/" + "?sortBy=" + this.sort.active + "&?order=" + (this.sort.direction === "asc" ? "ASC" : "DESC")));
     }
 
