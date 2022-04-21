@@ -58,6 +58,7 @@ export class BookListComponent implements OnInit, OnChanges {
     if (!sort.active || sort.direction === '') {
       return;
     }
+    console.log(sort, "pushed");
     this.sortBookEvent.emit(sort);
   }
 }
