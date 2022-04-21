@@ -84,5 +84,6 @@ export class AppComponent implements OnInit {
   }
   async sortBook($event: Sort) {
     this.dataSource.data = await this.bookService.sorted($event);
+    console.log(this.dataSource.data);
   }
 }
