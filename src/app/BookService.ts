@@ -6,9 +6,11 @@ import { Sort } from "@angular/material/sort";
 export class BookService {
     private url: string;
     static instance: BookService;
+    sort: Sort;
 
     constructor(private http: HttpClient) {
         this.url = "https://booksjsb.herokuapp.com/v5/book"
+        this.sort = {active: "isbn", direction: "asc"};
     }
     
     static service() {
@@ -19,7 +21,7 @@ export class BookService {
     }
     
     async getBooks(): Promise<Book[]> {
-        return await lastValueFrom(this.http.get<Book[]>(this.url + "/"));
+        return await lastValueFrom(this.http.get<Book[]>(this.url + "/" + "?sortBy=" + this.sort.active + "&?order=" + (this.sort.direction === "asc" ? "ASC" : "DESC")));
     }
 
     async addBook(book: Book): Promise<boolean> {
@@ -35,6 +37,7 @@ export class BookService {
     }
 
     async sorted(sort: Sort): Promise<Book[]> {
-        return await lastValueFrom(this.http.get<Book[]>(this.url + "/" + "?sortBy=" + sort.active + "&?order="+ (sort.direction === "asc" ? "ASC" : "DESC")));
+        this.sort = sort;
+        return this.getBooks();
     }
 }
