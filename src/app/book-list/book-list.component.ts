@@ -53,7 +53,7 @@ export class BookListComponent implements OnInit, OnChanges {
     });
 
   }
-  async sortData(sort: Sort) {
+  sortBook(sort: Sort) {
     if (!sort.active || sort.direction === '') {
       return;
     }
