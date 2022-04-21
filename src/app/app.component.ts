@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Book } from './Book';
 import { BookService } from './BookService';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-root',
@@ -80,5 +81,8 @@ export class AppComponent implements OnInit {
         }
       );
     }
+  }
+  async sortBook($event: Sort) {
+    this.dataSource.data = await this.bookService.sorted($event);
   }
 }

@@ -18,6 +18,7 @@ export class BookListComponent implements OnInit, OnChanges {
   
   @Output() deleteBookEvent = new EventEmitter<string>();
   @Output() updateBookEvent = new EventEmitter<Book>();
+  @Output() sortBookEvent = new EventEmitter<Sort>();
 
   displayedColumns: string[] = ['isbn', 'name', 'author', 'actions']
   bookService = BookService.service();
@@ -57,6 +58,6 @@ export class BookListComponent implements OnInit, OnChanges {
     if (!sort.active || sort.direction === '') {
       return;
     }
-    return await this.bookService.sorted(sort);
+    this.sortBookEvent.emit(sort);
   }
 }
