@@ -1,4 +1,4 @@
 <div class="root">
     <app-add-book (addBookEvent)="addBook($event)"></app-add-book>
-    <app-book-list [dataSource]="dataSource" (deleteBookEvent)="deleteBook($event)" (updateBookEvent)="updateBook($event)"></app-book-list>
+    <app-book-list [dataSource]="dataSource" (deleteBookEvent)="deleteBook($event)" (updateBookEvent)="updateBook($event)" (sortBookEvent)="sortBook($event)"></app-book-list>
 </div>
