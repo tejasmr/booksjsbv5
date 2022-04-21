@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "cd booksjsbv5 && npm install",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -42,10 +44,5 @@
   "engines": {
     "node": "7.8.0",
     "npm": "4.6.1"
-  },
-  "scripts": {
-    "heroku-postbuild": "cd booksjsbv5 && npm install",
-    "postinstall": "ng build --aot -prod"
-
   }
 }
