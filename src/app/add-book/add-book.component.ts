@@ -33,8 +33,6 @@ export class AddBookComponent implements OnInit {
     const author: string = this.addBookForm.value["author"];
 
     this.addBookEvent.emit(new Book(id, isbn, name, author));
-    // this.bookService.addBook(new Book(id, isbn, name, author));
-    console.log("onSubmit(): " + this.bookService.getBooks());
     this.addBookForm.reset();
     
     Object.keys(this.addBookForm.controls).forEach(key =>{

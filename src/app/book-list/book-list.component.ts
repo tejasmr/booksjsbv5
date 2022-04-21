@@ -33,7 +33,6 @@ export class BookListComponent implements OnInit, OnChanges {
   }
 
   async ngOnChanges() {
-    console.log(this.bookService.getBooks());
     this.dataSource.data = await this.bookService.getBooks();
     this.dataSource.paginator = this.paginator;
   }
