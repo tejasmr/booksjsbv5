@@ -10,7 +10,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'booksjsbv5test';
+  title = 'booksjsbv5';
   dataSource = new MatTableDataSource<Book>([]);
   bookService = BookService.service();
   constructor(private snackBar: MatSnackBar) {
