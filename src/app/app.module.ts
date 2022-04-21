@@ -17,6 +17,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

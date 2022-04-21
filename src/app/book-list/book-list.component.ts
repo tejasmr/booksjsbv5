@@ -7,6 +7,7 @@ import { Book } from '../Book';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateBookComponent } from '../update-book/update-book.component';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-book-list',
@@ -52,10 +53,10 @@ export class BookListComponent implements OnInit, OnChanges {
     });
 
   }
-  // get dataSource()  {
-  //   const ;
-  //   dataSource.paginator = this.paginator;
-  //   return dataSource;
-  // };
-
+  async sortData(sort: Sort) {
+    if (!sort.active || sort.direction === '') {
+      return;
+    }
+    return await this.bookService.sorted(sort);
+  }
 }

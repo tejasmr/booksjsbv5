@@ -16,3 +16,7 @@ table {
     display: flex;
     gap: 10px
 }
+
+.mat-sort-header-container {
+    align-items: center;
+  }
