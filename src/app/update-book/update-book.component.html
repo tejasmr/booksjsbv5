@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Update Book</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" color="accent">
+        <mat-label>ISBN</mat-label>
+        <input id="isbn" type="text" matInput [(ngModel)]="book.isbn" disabled="true"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" color="accent">
+        <mat-label>Name</mat-label>
+        <input id="name" type="text" matInput [(ngModel)]="book.name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" color="accent">
+        <mat-label>Author</mat-label>
+        <input id="author" type="text" matInput [(ngModel)]="book.author">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="book" cdkFocusInitial>Update</button>
+</div>

@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Add Book</mat-card-title>
+    </mat-card-header>
+<mat-card-content>
+    <div class="add-book-form"> 
+        <form [formGroup]="addBookForm" (ngSubmit)="onAddButtonPressed()">
+            <div class="add-book-fields">
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>ISBN</mat-label>
+                    <input id="isbn" matInput type="text" formControlName="isbn">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>Name</mat-label>
+                    <input id="name" matInput type="text" formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" color="accent">
+                    <mat-label>Author</mat-label>
+                    <input id="author" matInput type="text" formControlName="author">
+                </mat-form-field>
+            </div>
+        
+            <div class="add-book-button">
+                <button class="button" type="submit" mat-raised-button color="primary" [disabled]="!addBookForm.valid">Add</button>
+            </div>   
+        </form>
+    </div>
+</mat-card-content>
+</mat-card>

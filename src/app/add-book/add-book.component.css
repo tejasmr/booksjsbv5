@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    margin: 10px;
+}
+
+.add-book-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.add-book-button {
+    display: flex;
+}
+
+button {
+    flex-grow: 1;
+}

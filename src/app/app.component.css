@@ -1,0 +1,9 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mat-snack-bar-container.success {
+    background: green;
+}
