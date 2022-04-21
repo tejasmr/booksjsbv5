@@ -42,5 +42,10 @@
   "engines": {
     "node": "7.8.0",
     "npm": "4.6.1"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd booksjsbv5 && npm install",
+    "postinstall": "ng build --aot -prod"
+
   }
 }
